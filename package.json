@@ -5,17 +5,24 @@
   "type": "module",
   "main": "database.js",
   "scripts": {
-    "dev": "npx nodemon app.js"
+    "dev": "vite"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "crypto-js": "^4.2.0",
+    "dotenv": "^16.4.5",
     "express": "^4.21.1",
-    "mysql2": "^3.11.3"
+    "mongoose": "^8.8.0",
+    "morgan": "^1.10.0",
+    "mysql2": "^3.11.3",
+    "typescript": "^5.6.3"
   },
   "devDependencies": {
-    "nodemon": "^3.1.7"
+    "nodemon": "^3.1.7",
+    "vite-plugin-node": "^4.0.0"
   }
 }
