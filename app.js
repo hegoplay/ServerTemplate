@@ -1,7 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 
-import { checkUser,createUser,getUser} from './database.js'
+import { checkUser,createUser,deleteUser,getUser, udpateUser} from './database.js'
 
 const app = express()
 
@@ -17,6 +17,19 @@ app.get("/users", async(req,res) =>{
 app.get("/users/:username", async(req,res) =>{
     const username = req.params.username;
     const check = await getUser(username);
+    res.send(check);
+});
+
+app.put("/users/:username", async(req,res) =>{
+    const username = req.params.username;
+    const {password} = req.body;
+    const check = await udpateUser(username,password);
+    res.send(check);
+});
+
+app.delete("/users/:username", async(req,res) =>{
+    const username = req.params.username;
+    const check = await deleteUser(username);
     res.send(check);
 });
 
